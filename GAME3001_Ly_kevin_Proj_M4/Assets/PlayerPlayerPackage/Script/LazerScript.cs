@@ -7,6 +7,7 @@ public class LazerScript : MonoBehaviour {
 
 	[SerializeField] float speed;
 	[SerializeField] float lifeSpan;
+	[SerializeField] int dmg;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +25,7 @@ public class LazerScript : MonoBehaviour {
 	{
 		PlayerHealth health;
 		if (health = other.GetComponent<PlayerHealth> ()) {
-			health.ChangeHealth (-10);
+			health.ChangeHealth (dmg);
 		}
 	}
 }

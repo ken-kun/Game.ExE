@@ -10,7 +10,7 @@ public class TimerScript : MonoBehaviour {
 	private Text timerSeconds;
 	public GameObject winScreen;
     public GameObject startScreen;
-
+	[SerializeField] AudioSource BGM;
 	//public bool timesUp;
 	//[SerializeField] string levelToLoad;
 
@@ -18,7 +18,7 @@ public class TimerScript : MonoBehaviour {
 	void Start () {
         Time.timeScale = 0.0f;
 		timerSeconds = GetComponent<Text> ();
-
+		BGM.Play();
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,7 @@ public class TimerScript : MonoBehaviour {
 		if (timer <= 0.0f) {
 			Time.timeScale = 0.0f;
 			winScreen.SetActive (true);
+			BGM.Stop();
 		}
 
 	}
