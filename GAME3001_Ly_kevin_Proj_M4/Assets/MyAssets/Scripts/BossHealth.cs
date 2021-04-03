@@ -17,10 +17,14 @@ public class BossHealth : MonoBehaviour {
 
 	public bool isAlive = true;
 	[SerializeField] GameObject explosionPrefab;
+	[SerializeField] AudioSource BGM;
 
 	public GameObject winScreen;
 
-
+	void Start()
+    {
+		BGM.Play();
+    }
 
 
 	// Update is called once per frame
@@ -43,7 +47,7 @@ public class BossHealth : MonoBehaviour {
 			transform.root.GetComponent<Enemy> ().enabled = false;
 			Time.timeScale = 0.0f;
 			winScreen.SetActive (true);
-
+			BGM.Stop();
 
 
 
