@@ -11,6 +11,7 @@ public class Enemy1FireScript : MonoBehaviour {
 	//[SerializeField] Transform projectileSpawn3;
 	//[SerializeField] Transform projectileSpawn4;
 	[SerializeField] GameObject player;
+	[SerializeField] float rateFire;
 	
 	bool FireRate = true;
 
@@ -39,7 +40,7 @@ public class Enemy1FireScript : MonoBehaviour {
 			//Instantiate (projectilePrefab, projectileSpawn2.position, projectileSpawn2.rotation);
 			//Instantiate (projectilePrefab, projectileSpawn3.position, projectileSpawn3.rotation);
 			//Instantiate (projectilePrefab, projectileSpawn4.position, projectileSpawn4.rotation);
-			Invoke ("Delay", 0.5f);
+			Invoke ("Delay", rateFire);
 		}
 
 	}
